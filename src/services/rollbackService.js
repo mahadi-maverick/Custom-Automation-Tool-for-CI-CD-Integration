@@ -1,7 +1,7 @@
-const axios = require('axios');
-require('dotenv').config();
+import axios from 'axios';
+import 'dotenv/config'; // Using import syntax for dotenv
 
-async function rollbackDeployment() {
+export async function rollbackDeployment() {
     const jenkinsUrl = process.env.JENKINS_URL;
     const jobName = process.env.JENKINS_JOB_NAME;
     const token = process.env.JENKINS_TOKEN;
@@ -14,5 +14,3 @@ async function rollbackDeployment() {
         throw error;
     }
 }
-
-module.exports = { rollbackDeployment };

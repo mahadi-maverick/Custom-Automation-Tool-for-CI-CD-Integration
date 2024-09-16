@@ -1,6 +1,6 @@
-const { deployToPlatform } = require('../services/deployService');
+import { deployToPlatform } from '../services/deployService.js';
 
-module.exports = async function deploy() {
+export default async function deploy() {
     console.log('Deploying application...');
     try {
         await deployToPlatform();
@@ -9,4 +9,4 @@ module.exports = async function deploy() {
         console.error('Deployment failed:', error);
         process.exit(1);
     }
-};
+}

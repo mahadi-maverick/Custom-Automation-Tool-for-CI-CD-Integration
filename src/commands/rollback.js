@@ -1,6 +1,6 @@
-const { rollbackDeployment } = require('../services/rollbackService');
+import { rollbackDeployment } from '../services/rollbackService.js';
 
-module.exports = async function rollback() {
+export default async function rollback() {
     console.log('Rolling back to the previous version...');
     try {
         await rollbackDeployment();
@@ -9,4 +9,4 @@ module.exports = async function rollback() {
         console.error('Rollback failed:', error);
         process.exit(1);
     }
-};
+}

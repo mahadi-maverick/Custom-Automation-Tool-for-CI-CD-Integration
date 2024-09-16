@@ -1,7 +1,7 @@
-const shell = require('shelljs');
-const chalk = require('chalk');
+import shell from 'shelljs';
+import chalk from 'chalk';
 
-module.exports = function test() {
+export default function test() {
     console.log(chalk.blue('Running tests...'));
 
     if (shell.exec('npm run test').code !== 0) {
@@ -10,4 +10,4 @@ module.exports = function test() {
     }
 
     console.log(chalk.green('Tests passed successfully!'));
-};
+}
